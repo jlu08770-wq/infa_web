@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Infa | Applied Projects</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#241f15",
+              "primary": "#ecb613",
+              "on-primary-container": "#ffd471",
+              "tertiary-fixed-dim": "#7cd0ff",
+              "secondary": "#e1c380",
+              "on-error": "#690005",
+              "tertiary-container": "#004c69",
+              "background": "#221d10",
+              "tertiary": "#b0e0ff",
+              "error-container": "#93000a",
+              "surface": "#221d10",
+              "surface-bright": "#3e382d",
+              "secondary-fixed": "#ffdf9a",
+              "on-tertiary-fixed": "#001e2c",
+              "on-error-container": "#ffdad6",
+              "surface-variant": "#3a3429",
+              "surface-container-lowest": "#120e06",
+              "outline": "#9b8f79",
+              "inverse-primary": "#775a00",
+              "on-tertiary-container": "#c4e7ff",
+              "on-secondary-container": "#d2b574",
+              "primary-fixed-dim": "#f6bf20",
+              "surface-container-highest": "#483f23",
+              "on-tertiary-fixed-variant": "#004c69",
+              "on-surface-variant": "#d3c5ac",
+              "on-secondary-fixed": "#251a00",
+              "secondary-container": "#5b460f",
+              "surface-tint": "#ecb613",
+              "on-primary-fixed-variant": "#5a4300",
+              "tertiary-fixed": "#c4e7ff",
+              "on-tertiary": "#00344a",
+              "on-primary-fixed": "#251a00",
+              "surface-container": "#2a2418",
+              "outline-variant": "#4f4633",
+              "surface-container-high": "#352e20",
+              "secondary-fixed-dim": "#e1c380",
+              "surface-dim": "#17130a",
+              "primary-fixed": "#ffdf99",
+              "primary-container": "#483f23",
+              "inverse-on-surface": "#353025",
+              "on-primary": "#221d10",
+              "on-background": "#ece1d1",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#58440d",
+              "on-secondary": "#3f2e00",
+              "on-surface": "#ece1d1",
+              "inverse-surface": "#ece1d1"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #120e06; /* surface-container-lowest */
+        color: #ece1d1;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased overflow-hidden h-screen flex">
+<!-- SideNavBar (Execution from JSON) -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-primary/10 bg-[#221d10] shadow-2xl z-50 transition-all duration-200 ease-in-out flex flex-col py-8 gap-4">
+<div class="px-8 mb-8">
+<h1 class="text-primary font-black text-2xl tracking-tight">Infa</h1>
+<p class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px] font-medium text-on-surface/60 mt-1">Editorial Archive</p>
+</div>
+<nav class="flex flex-col flex-grow">
+<!-- Dashboard -->
+<a class="flex items-center px-8 py-4 gap-4 text-on-surface/60 hover:bg-primary/10 hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px] font-medium">Dashboard</span>
+</a>
+<!-- Discovery -->
+<a class="flex items-center px-8 py-4 gap-4 text-on-surface/60 hover:bg-primary/10 hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px] font-medium">Discovery</span>
+</a>
+<!-- Requests (Active Logic) -->
+<a class="flex items-center px-8 py-4 gap-4 text-primary border-r-2 border-primary bg-primary/5 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="move_to_inbox" style="font-variation-settings: 'FILL' 1;">move_to_inbox</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px] font-medium">Requests</span>
+</a>
+<!-- Bookings -->
+<a class="flex items-center px-8 py-4 gap-4 text-on-surface/60 hover:bg-primary/10 hover:text-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px] font-medium">Bookings</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center px-8 py-4 gap-4 text-on-surface/60 hover:bg-primary/10 hover:text-primary transition-colors duration-200 mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Shell -->
+<main class="flex-grow ml-64 overflow-y-auto h-full flex flex-col no-scrollbar">
+<!-- TopAppBar (Execution from JSON) -->
+<header class="sticky top-0 w-full z-40 bg-[#221d10]/80 backdrop-blur-md shadow-sm h-20 flex justify-between items-center px-8">
+<div class="flex items-center gap-12">
+<div class="text-2xl font-bold tracking-tight text-[#ecb613] font-['Plus_Jakarta_Sans']">Infa</div>
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface/40 text-lg">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2.5 pl-12 pr-4 text-sm text-on-surface placeholder-on-surface/40 focus:ring-1 focus:ring-primary" placeholder="Search archive..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#ece1d1]/40 hover:text-[#ecb613] transition-colors duration-300 scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+<button class="text-[#ece1d1]/40 hover:text-[#ecb613] transition-colors duration-300 scale-95 transition-transform relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full ring-2 ring-surface"></span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border border-primary/20 cursor-pointer">
+<img class="h-full w-full object-cover" data-alt="close-up portrait of a male model with sharp features and short dark hair against a minimalist dark grey studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_vVz-g3As_2lzPuR8q27Q27E87aafFCS1C3PZbGR8VgHNVyBlbuf5CB9xnnS2H6wBOWlyzR4SKiEJMdD192qMS1UUARktag6CIG4ZgDsmlDsZiXcS0yKTmuGFr2smqRsqp_00q75CK9eaa3AAbX1QUKIA3F39VnM7jkBeXmTq6Vx9-PCCX7H8ayjPG2u-OrzGT9fevUQXBLVqs_cKVulYIPomgtXgUF-jIXU5h8aKoj-beXgJ01Ze0mGdUDgQYUVWO6C2QQwkCw"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-12 max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="uppercase tracking-[0.2em] text-[10px] font-bold text-primary mb-2 block">Curation Hub</span>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface">Applied Projects</h2>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-3 rounded-full border border-primary/20 text-on-surface text-sm font-semibold hover:bg-primary/5 transition-all">Archive</button>
+<button class="px-6 py-3 rounded-full bg-primary text-on-primary text-sm font-bold shadow-lg hover:shadow-primary/20 transition-all">New Application</button>
+</div>
+</div>
+<!-- Stats Row (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+<div class="bg-primary/5 p-6 rounded-xl border border-primary/10 flex flex-col justify-between h-32">
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/60">Total Applications</span>
+<div class="flex items-end justify-between">
+<span class="text-3xl font-black text-primary">24</span>
+<span class="material-symbols-outlined text-primary/40" data-icon="layers">layers</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-xl flex flex-col justify-between h-32">
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/60">Active Reviews</span>
+<div class="flex items-end justify-between">
+<span class="text-3xl font-black text-on-surface">08</span>
+<span class="material-symbols-outlined text-on-surface/20" data-icon="visibility">visibility</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-xl flex flex-col justify-between h-32">
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/60">Upcoming Interviews</span>
+<div class="flex items-end justify-between">
+<span class="text-3xl font-black text-on-surface">03</span>
+<span class="material-symbols-outlined text-on-surface/20" data-icon="schedule">schedule</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-xl flex flex-col justify-between h-32">
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface/60">Hired Projects</span>
+<div class="flex items-end justify-between">
+<span class="text-3xl font-black text-primary">05</span>
+<span class="material-symbols-outlined text-primary/40" data-icon="workspace_premium">workspace_premium</span>
+</div>
+</div>
+</div>
+<!-- Projects Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1: Lakme -->
+<div class="group relative flex flex-col h-full">
+<div class="aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="professional fashion runway shot featuring a designer garment in elegant lighting with blurred audience in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwiD0Eyr2c5Eeg41ejmBvNIN1Y2PJqnP6g-Qh_o8pDVbSCW8LiWl48r7FjiaeKVumLfMsC61avX4YQ82eriFPAtSUDcGg_myjuB6tkf-5P6NlX_UWQN02iR_EzQUdB85aPw8TnYBTzDI_uAi3KoOVFrWNHk_JwEuLQihlW4YzNhJRjTAanoojpIaMjYx4ULmrX1pylGVQ7Nfnh-wXNLXv1eQbKAjBNLMf7S49PVEePh3muEQPRB5WFDsA9Wh8II7kwBnH8NNhu3A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 right-4 flex gap-2">
+<span class="bg-primary text-on-primary text-[10px] font-black px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[12px]" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                                HIRED
+                            </span>
+</div>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex items-start justify-between mb-1">
+<h3 class="font-bold text-lg tracking-tight truncate pr-2">Lakme Fashion Week</h3>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-on-surface/40 font-bold mb-4">RISE Worldwide</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-[11px] text-on-surface/60 font-medium">OCT 12, 2023</span>
+<button class="text-primary text-[11px] font-bold uppercase tracking-widest hover:underline underline-offset-4">View Brief</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Sabyasachi -->
+<div class="group relative flex flex-col h-full">
+<div class="aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="luxury indian bridal wear detailing with intricate gold embroidery and heavy jewelry in soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhkbahCisP4HMTCBuPdPVm3usi28IfjHbk_7jHmokvdutsD8wiwZ9JAPAMuny27qPNOQDIdDaxnmfYp00Ea5eh9RcN3SevVs4z8l3_U5iai-IZe2fCa4K8mKhLJVCXJn99Lc1fG_Mta6iJqzWjod6KhHMR4MiCBk4cDvjoAZLc9a1uWEGfVsXH3L1amNo9E9VxArcF-rPwhwhl8n0Jpn8b9Ry0GI9ga6ROY6i2cY9RwrcAB4IF5FxXGTuBhoY0Li93yLSU6Cw1SA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 right-4">
+<span class="bg-surface-bright/80 backdrop-blur-md text-on-surface text-[10px] font-black px-3 py-1 rounded-full ring-1 ring-white/10 shadow-lg">
+                                UNDER REVIEW
+                            </span>
+</div>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex items-start justify-between mb-1">
+<h3 class="font-bold text-lg tracking-tight truncate pr-2">Sabyasachi Bridal '24</h3>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-on-surface/40 font-bold mb-4">Sabyasachi Mukherjee</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-[11px] text-on-surface/60 font-medium">OCT 28, 2023</span>
+<button class="text-error text-[11px] font-bold uppercase tracking-widest hover:underline underline-offset-4">Withdraw</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Vogue -->
+<div class="group relative flex flex-col h-full">
+<div class="aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="edgy urban fashion editorial shot with high contrast shadows and neon city lights reflecting on reflective clothing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBECBee4uy5OlLGqAyL_OV_aMAwdjv9Q7DO0DyH_ef7XLelIaAzGk8aKwrSD-rNU2frUKt5McF17dfnxVlFt9B6sxKpsGnWNo5e4Z4YngHK68FXj_wguQYQyXiCF_mzqZ1nHmUHRZm_tvpX4io1C9T1qKMCIcwe1Kkun_7AMB7-Fg0ulrWHQmoO8xQrFXThOw2dJw0oHrL0zgIZTpJGP-RwOtFA0jt1CZ5A8Q5m5qdfHWf7ZJKGjpjKMardEa2657O22nt91a0oJw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 right-4">
+<span class="bg-surface-container-high/80 backdrop-blur-md text-on-surface/60 text-[10px] font-black px-3 py-1 rounded-full ring-1 ring-white/10 shadow-lg">
+                                APPLIED
+                            </span>
+</div>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex items-start justify-between mb-1">
+<h3 class="font-bold text-lg tracking-tight truncate pr-2">Vogue Editorial: Urban Edge</h3>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-on-surface/40 font-bold mb-4">Condé Nast</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-[11px] text-on-surface/60 font-medium">NOV 02, 2023</span>
+<button class="text-on-surface text-[11px] font-bold uppercase tracking-widest hover:underline underline-offset-4">Details</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Tanishq -->
+<div class="group relative flex flex-col h-full">
+<div class="aspect-[3/4] w-full rounded-xl overflow-hidden bg-surface-container mb-4 relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="close up of gold jewelry on model neck and ears with warm golden glow and deep shadows for luxury campaign" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlA98S-j-FyPzpO8_2BPJyi_8yzNGhCRjhuKJN036-6xYuxnIJAzst7BkdK9t5A3HY8IrQbKbfd9y7y19wmwvufCM_aw-V2dyIzFUbs0Vfc85di0r5rBoF_EtyQUHDoGVpCIpe-ty4oL5CFSw115gl51Jn6dI6OnieCOikTeV4rnrdGLFu-Zc7gTKsJwLZAth2AjqyUpeCeMcU6708DDBXgnAPy0NXi9tH5RzUbglfSpddPqD470Aipc7HI3Z6MDcV59NUMs8cw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 right-4 flex gap-2">
+<span class="bg-primary text-on-primary text-[10px] font-black px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[12px]" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                                HIRED
+                            </span>
+</div>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex items-start justify-between mb-1">
+<h3 class="font-bold text-lg tracking-tight truncate pr-2">Tanishq 'Glow' Campaign</h3>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-on-surface/40 font-bold mb-4">Titan Company</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-[11px] text-on-surface/60 font-medium">OCT 15, 2023</span>
+<button class="text-primary text-[11px] font-bold uppercase tracking-widest hover:underline underline-offset-4">Contract</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (Shell Logic) -->
+<!-- Suppressed based on 'Details/Transactional' logic for this specific dashboard view if needed, 
+         but kept as per Design System mandate for main Dashboard screens if it adds value. 
+         Suppressing here to focus on 'Applied Projects' task focus. -->
+</body></html>

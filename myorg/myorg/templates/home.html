@@ -1,0 +1,70 @@
+{% extends 'base_shell.html' %}
+{% block title %}Infa | Home{% endblock %}
+{% block content %}
+<main class="mx-auto max-w-7xl px-6 py-16">
+    <section class="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div>
+            <p class="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-amber-300/80">Editorial archive</p>
+            <h1 class="max-w-4xl text-5xl font-black tracking-tight text-white md:text-7xl">
+                Connect models, organizers, and real casting opportunities.
+            </h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-stone-300">
+                Your frontend screens are now backed by Django pages, live queries, edit forms, and application flows instead of static mockups.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a href="{% url 'model-gallery' %}" class="rounded-full bg-amber-400 px-6 py-3 text-sm font-bold text-stone-950">Browse Talent</a>
+                <a href="{% url 'opportunity-board' %}" class="rounded-full border border-amber-400/30 px-6 py-3 text-sm font-semibold text-amber-100">Open Opportunities</a>
+                {% if not current_user %}
+                <a href="{% url 'signup' %}" class="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white">Create Account</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            <div class="rounded-3xl border border-amber-500/10 bg-white/5 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Models</p>
+                <p class="mt-3 text-4xl font-black text-amber-300">{{ total_models }}</p>
+            </div>
+            <div class="rounded-3xl border border-amber-500/10 bg-white/5 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Open roles</p>
+                <p class="mt-3 text-4xl font-black text-white">{{ total_opportunities }}</p>
+            </div>
+            <div class="rounded-3xl border border-amber-500/10 bg-white/5 p-6">
+                <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Applications</p>
+                <p class="mt-3 text-4xl font-black text-white">{{ total_applications }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-20">
+        <div class="mb-8 flex items-end justify-between gap-6">
+            <div>
+                <p class="text-xs font-bold uppercase tracking-[0.35em] text-amber-300/80">Featured talent</p>
+                <h2 class="mt-2 text-3xl font-black tracking-tight text-white">Profiles ready for the frontend</h2>
+            </div>
+            <a href="{% url 'model-gallery' %}" class="text-sm font-semibold text-amber-200">View all</a>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+            {% for profile in featured_profiles %}
+            <article class="overflow-hidden rounded-3xl border border-amber-500/10 bg-white/5">
+                <img src="{{ profile.resolved_primary_image_url }}" alt="{{ profile.user.name }}" class="h-72 w-full object-cover">
+                <div class="p-6">
+                    <div class="flex items-center justify-between gap-3">
+                        <h3 class="text-xl font-bold text-white">{{ profile.user.name }}</h3>
+                        {% if profile.user.verified %}
+                        <span class="rounded-full bg-amber-400/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-200">Verified</span>
+                        {% endif %}
+                    </div>
+                    <p class="mt-2 text-sm text-stone-300">{{ profile.category }}{% if profile.user.location %} • {{ profile.user.location }}{% endif %}</p>
+                    <p class="mt-4 line-clamp-3 text-sm leading-6 text-stone-400">{{ profile.experience }}</p>
+                    <a href="{% url 'model-detail' profile.pk %}" class="mt-6 inline-flex rounded-full border border-amber-400/30 px-4 py-2 text-sm font-semibold text-amber-100">Open profile</a>
+                </div>
+            </article>
+            {% empty %}
+            <div class="rounded-3xl border border-dashed border-stone-700 p-8 text-stone-400 md:col-span-3">
+                Add some model profiles in the database and they’ll appear here automatically.
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base_shell.html' %}
+{% block title %}Infa | Organizer Requests{% endblock %}
+{% block content %}
+<main class="mx-auto max-w-7xl px-6 py-12">
+    <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+            <p class="text-xs font-bold uppercase tracking-[0.35em] text-amber-300/80">Organizer desk</p>
+            <h1 class="mt-2 text-4xl font-black tracking-tight text-white">Request Overview</h1>
+            {% if organizer %}
+            <p class="mt-3 text-stone-300">Showing opportunities for <span class="font-semibold text-white">{{ organizer.name }}</span>.</p>
+            {% endif %}
+        </div>
+        <a href="{% url 'opportunity-board' %}" class="rounded-full border border-amber-400/30 px-5 py-3 text-sm font-semibold text-amber-100">Open candidate board</a>
+    </div>
+
+    <section class="mb-10 grid gap-4 md:grid-cols-3">
+        <div class="rounded-3xl border border-amber-500/10 bg-white/5 p-6">
+            <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Total requests</p>
+            <p class="mt-3 text-4xl font-black text-white">{{ total_requests }}</p>
+        </div>
+        <div class="rounded-3xl border border-amber-500/10 bg-white/5 p-6">
+            <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Active requests</p>
+            <p class="mt-3 text-4xl font-black text-amber-300">{{ active_requests }}</p>
+        </div>
+        <div class="rounded-3xl border border-amber-500/10 bg-white/5 p-6">
+            <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Featured requests</p>
+            <p class="mt-3 text-4xl font-black text-white">{{ featured_requests }}</p>
+        </div>
+    </section>
+
+    <section class="space-y-5">
+        {% for opportunity in opportunities %}
+        <article class="rounded-3xl border border-amber-500/10 bg-white/5 p-6">
+            <div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+                <div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <h2 class="text-2xl font-bold text-white">{{ opportunity.title }}</h2>
+                        <span class="rounded-full {% if opportunity.status == 'open' %}bg-emerald-500/15 text-emerald-200{% else %}bg-stone-700 text-stone-200{% endif %} px-3 py-1 text-xs font-bold uppercase tracking-wider">{{ opportunity.status }}</span>
+                    </div>
+                    <p class="mt-3 text-sm text-stone-400">{{ opportunity.organizer.name }}{% if opportunity.category %} • {{ opportunity.category }}{% endif %}{% if opportunity.location %} • {{ opportunity.location }}{% endif %}</p>
+                    <p class="mt-4 max-w-3xl text-sm leading-7 text-stone-300">{{ opportunity.description|truncatechars:180 }}</p>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-3 lg:w-[24rem]">
+                    <div class="rounded-2xl bg-stone-900/80 p-4">
+                        <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Budget</p>
+                        <p class="mt-2 text-lg font-bold text-white">₹{{ opportunity.budget }}</p>
+                    </div>
+                    <div class="rounded-2xl bg-stone-900/80 p-4">
+                        <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Applicants</p>
+                        <p class="mt-2 text-lg font-bold text-white">{{ opportunity.application_count }}</p>
+                    </div>
+                    <div class="rounded-2xl bg-stone-900/80 p-4">
+                        <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Dates</p>
+                        <p class="mt-2 text-sm font-semibold text-white">
+                            {% if opportunity.start_date %}{{ opportunity.start_date|date:'M d' }}{% else %}TBD{% endif %}
+                            {% if opportunity.end_date %} - {{ opportunity.end_date|date:'M d' }}{% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% empty %}
+        <div class="rounded-3xl border border-dashed border-stone-700 p-8 text-stone-400">
+            No organizer opportunities were found yet.
+        </div>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}

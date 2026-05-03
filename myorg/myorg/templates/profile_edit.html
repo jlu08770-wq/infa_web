@@ -1,0 +1,107 @@
+{% extends 'base_shell.html' %}
+{% block title %}Infa | Edit Profile{% endblock %}
+{% block content %}
+<main class="mx-auto max-w-6xl px-6 py-12">
+    <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+            <p class="text-xs font-bold uppercase tracking-[0.35em] text-amber-300/80">Profile editor</p>
+            <h1 class="mt-2 text-4xl font-black tracking-tight text-white">Edit {{ profile.user.name }}</h1>
+            <p class="mt-3 max-w-2xl text-stone-300">Keep it simple: add photo links only. Photo 1 becomes the main image automatically.</p>
+        </div>
+        <a href="{% url 'model-detail' profile.pk %}" class="rounded-full border border-amber-400/30 px-5 py-3 text-sm font-semibold text-amber-100">View public profile</a>
+    </div>
+
+    {% if user_form.errors or profile_form.errors %}
+    <div class="mb-6 rounded-3xl border border-rose-500/20 bg-rose-500/10 p-5 text-sm text-rose-100">
+        Please fix the highlighted fields and submit again.
+    </div>
+    {% endif %}
+
+    <form method="post" class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+        {% csrf_token %}
+        <section class="space-y-6 rounded-3xl border border-amber-500/10 bg-white/5 p-8">
+            <img src="{{ profile.resolved_cover_image_url }}" alt="{{ profile.user.name }}" class="h-56 w-full rounded-3xl object-cover">
+            <div class="flex items-center gap-4">
+                <img src="{{ profile.resolved_primary_image_url }}" alt="{{ profile.user.name }}" class="h-24 w-24 rounded-3xl object-cover">
+                <div>
+                    <p class="text-lg font-bold text-white">{{ profile.user.name }}</p>
+                    <p class="text-sm text-stone-400">{{ profile.category }}{% if profile.user.location %} • {{ profile.user.location }}{% endif %}</p>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Photo 1</span>
+                    <p class="mb-2 text-xs text-stone-500">Main profile photo</p>
+                    <input type="url" name="portfolio_image_url" value="{{ profile_form.portfolio_image_url.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white" placeholder="Paste image link here">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Photo 2</span>
+                    <p class="mb-2 text-xs text-stone-500">Used in gallery and cover rotation</p>
+                    <input type="url" name="gallery_image_1_url" value="{{ profile_form.gallery_image_1_url.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white" placeholder="Paste image link here">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Photo 3</span>
+                    <input type="url" name="gallery_image_2_url" value="{{ profile_form.gallery_image_2_url.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white" placeholder="Paste image link here">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Photo 4</span>
+                    <input type="url" name="gallery_image_3_url" value="{{ profile_form.gallery_image_3_url.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white" placeholder="Paste image link here">
+                </label>
+            </div>
+        </section>
+
+        <section class="space-y-6 rounded-3xl border border-amber-500/10 bg-white/5 p-8">
+            <div class="grid gap-5 md:grid-cols-2">
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Full Name</span>
+                    <input type="text" name="name" value="{{ user_form.name.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Email</span>
+                    <input type="email" name="email" value="{{ user_form.email.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Location</span>
+                    <input type="text" name="location" value="{{ user_form.location.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Category</span>
+                    <input type="text" name="category" value="{{ profile_form.category.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Age</span>
+                    <input type="number" name="age" value="{{ profile_form.age.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Gender</span>
+                    <input type="text" name="gender" value="{{ profile_form.gender.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Height (cm)</span>
+                    <input type="number" name="height_cm" value="{{ profile_form.height_cm.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Instagram</span>
+                    <input type="text" name="instagram_handle" value="{{ profile_form.instagram_handle.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                </label>
+            </div>
+            <label class="block">
+                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Bio</span>
+                <textarea name="bio" rows="4" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">{{ user_form.bio.value|default_if_none:'' }}</textarea>
+            </label>
+            <label class="block">
+                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Experience</span>
+                <textarea name="experience" rows="6" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">{{ profile_form.experience.value|default_if_none:'' }}</textarea>
+            </label>
+            <label class="flex items-center gap-3 rounded-2xl bg-stone-900/80 px-4 py-3 text-sm text-stone-200">
+                <input type="checkbox" name="featured" {% if profile_form.featured.value %}checked{% endif %} class="rounded border-amber-400 text-amber-400 focus:ring-amber-400">
+                Highlight this profile as featured
+            </label>
+            <div class="flex flex-wrap gap-3">
+                <button type="submit" class="rounded-full bg-amber-400 px-6 py-3 text-sm font-bold text-stone-950">Save changes</button>
+                <a href="{% url 'model-detail' profile.pk %}" class="rounded-full border border-amber-400/30 px-6 py-3 text-sm font-semibold text-amber-100">Cancel</a>
+            </div>
+        </section>
+    </form>
+</main>
+{% endblock %}

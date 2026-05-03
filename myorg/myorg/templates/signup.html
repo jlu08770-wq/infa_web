@@ -1,0 +1,108 @@
+{% extends 'base_shell.html' %}
+{% block title %}Infa | Sign Up{% endblock %}
+{% block content %}
+<main class="mx-auto grid max-w-7xl gap-10 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr]">
+    <section class="flex flex-col justify-center">
+        <p class="text-xs font-bold uppercase tracking-[0.35em] text-amber-300/80">Join infa</p>
+        <h1 class="mt-4 text-5xl font-black tracking-tight text-white">Create your account in the same editorial theme.</h1>
+        <p class="mt-6 max-w-xl text-lg leading-8 text-stone-300">
+            Sign up as a model or organizer. Model accounts create the profile data needed for discovery, applications, and editing right away.
+        </p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-3xl border border-amber-500/10 bg-white/5 p-5">
+                <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Theme</p>
+                <p class="mt-2 font-semibold text-white">Same dark gold aesthetic</p>
+            </div>
+            <div class="rounded-3xl border border-amber-500/10 bg-white/5 p-5">
+                <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Model flow</p>
+                <p class="mt-2 font-semibold text-white">Creates profile support</p>
+            </div>
+            <div class="rounded-3xl border border-amber-500/10 bg-white/5 p-5">
+                <p class="text-xs uppercase tracking-[0.3em] text-stone-400">Landing</p>
+                <p class="mt-2 font-semibold text-white">Home page stays first</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rounded-[2rem] border border-amber-500/10 bg-white/5 p-8 shadow-2xl">
+        <div class="mb-8">
+            <h2 class="text-3xl font-black tracking-tight text-white">Create account</h2>
+            <p class="mt-2 text-sm text-stone-400">Already have one? <a href="{% url 'login' %}" class="text-amber-200">Login here</a></p>
+        </div>
+        <form method="post" class="space-y-5">
+            {% csrf_token %}
+            <div class="grid gap-5 md:grid-cols-2">
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Full name</span>
+                    <input type="text" name="name" value="{{ form.name.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                    {% if form.name.errors %}<p class="mt-2 text-sm text-rose-300">{{ form.name.errors.0 }}</p>{% endif %}
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Email</span>
+                    <input type="email" name="email" value="{{ form.email.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                    {% if form.email.errors %}<p class="mt-2 text-sm text-rose-300">{{ form.email.errors.0 }}</p>{% endif %}
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Password</span>
+                    <input type="password" name="password" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                    {% if form.password.errors %}<p class="mt-2 text-sm text-rose-300">{{ form.password.errors.0 }}</p>{% endif %}
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Confirm password</span>
+                    <input type="password" name="confirm_password" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                    {% if form.confirm_password.errors %}<p class="mt-2 text-sm text-rose-300">{{ form.confirm_password.errors.0 }}</p>{% endif %}
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Role</span>
+                    <select name="role" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                        <option value="model" {% if form.role.value == 'model' %}selected{% endif %}>Model</option>
+                        <option value="organizer" {% if form.role.value == 'organizer' %}selected{% endif %}>Organizer</option>
+                    </select>
+                    {% if form.role.errors %}<p class="mt-2 text-sm text-rose-300">{{ form.role.errors.0 }}</p>{% endif %}
+                </label>
+                <label class="block">
+                    <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Location</span>
+                    <input type="text" name="location" value="{{ form.location.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                </label>
+            </div>
+
+            <label class="block">
+                <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Bio</span>
+                <textarea name="bio" rows="3" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">{{ form.bio.value|default_if_none:'' }}</textarea>
+            </label>
+
+            <div class="rounded-3xl border border-amber-500/10 bg-stone-950/60 p-5">
+                <p class="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-amber-200">Model details</p>
+                <div class="grid gap-5 md:grid-cols-2">
+                    <label class="block">
+                        <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Age</span>
+                        <input type="number" name="age" value="{{ form.age.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                        {% if form.age.errors %}<p class="mt-2 text-sm text-rose-300">{{ form.age.errors.0 }}</p>{% endif %}
+                    </label>
+                    <label class="block">
+                        <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Gender</span>
+                        <input type="text" name="gender" value="{{ form.gender.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                        {% if form.gender.errors %}<p class="mt-2 text-sm text-rose-300">{{ form.gender.errors.0 }}</p>{% endif %}
+                    </label>
+                    <label class="block">
+                        <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Category</span>
+                        <input type="text" name="category" value="{{ form.category.value|default_if_none:'' }}" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">
+                        {% if form.category.errors %}<p class="mt-2 text-sm text-rose-300">{{ form.category.errors.0 }}</p>{% endif %}
+                    </label>
+                    <label class="block md:col-span-2">
+                        <span class="mb-2 block text-xs font-bold uppercase tracking-[0.3em] text-stone-400">Experience</span>
+                        <textarea name="experience" rows="4" class="w-full rounded-2xl border-0 bg-stone-900/80 px-4 py-3 text-sm text-white">{{ form.experience.value|default_if_none:'' }}</textarea>
+                        {% if form.experience.errors %}<p class="mt-2 text-sm text-rose-300">{{ form.experience.errors.0 }}</p>{% endif %}
+                    </label>
+                </div>
+            </div>
+
+            {% if form.non_field_errors %}
+            <p class="text-sm text-rose-300">{{ form.non_field_errors.0 }}</p>
+            {% endif %}
+
+            <button type="submit" class="w-full rounded-full bg-amber-400 px-6 py-3 text-sm font-bold text-stone-950">Create account</button>
+        </form>
+    </section>
+</main>
+{% endblock %}

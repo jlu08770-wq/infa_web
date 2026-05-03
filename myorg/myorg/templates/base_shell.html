@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Infa{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'infa/css/custom.css.css' %}">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-stone-950 text-stone-100 min-h-screen">
+    <div class="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(234,179,8,0.18),_transparent_35%),linear-gradient(180deg,_#1c1917,_#0c0a09)]">
+        <header class="sticky top-0 z-50 border-b border-amber-500/10 bg-stone-950/85 backdrop-blur">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+                <a href="{% url 'home' %}" class="text-2xl font-black tracking-tight text-amber-400">Infa</a>
+                <nav class="hidden gap-6 text-sm text-stone-300 md:flex">
+                    <a href="{% url 'model-gallery' %}" class="hover:text-amber-300">Discover Models</a>
+                    <a href="{% url 'opportunity-board' %}" class="hover:text-amber-300">Opportunities</a>
+                    <a href="{% url 'organizer-requests' %}" class="hover:text-amber-300">Organizer Requests</a>
+                    <a href="{% url 'applications-page' %}" class="hover:text-amber-300">Applications</a>
+                    {% if current_profile %}
+                    <a href="{% url 'profile-edit' current_profile.pk %}" class="hover:text-amber-300">Edit Profile</a>
+                    {% endif %}
+                </nav>
+                <div class="flex items-center gap-3">
+                    {% if current_user %}
+                    <span class="hidden rounded-full border border-amber-400/20 px-3 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-amber-100 md:inline-flex">
+                        {{ current_user.name }}
+                    </span>
+                    <a href="{% url 'logout' %}" class="rounded-full border border-amber-400/30 px-4 py-2 text-sm font-semibold text-amber-100">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="rounded-full border border-amber-400/30 px-4 py-2 text-sm font-semibold text-amber-100">Login</a>
+                    <a href="{% url 'signup' %}" class="rounded-full bg-amber-400 px-4 py-2 text-sm font-bold text-stone-950">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+
+        {% if messages %}
+        <div class="mx-auto max-w-7xl px-6 pt-6">
+            {% for message in messages %}
+            <div class="mb-3 rounded-2xl border border-amber-500/20 bg-amber-500/10 px-4 py-3 text-sm text-amber-100">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

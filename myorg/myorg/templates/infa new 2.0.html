@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GILDED OBSIDIAN | INFA Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#241f15",
+              "on-error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#5a4300",
+              "background": "#221d10",
+              "on-secondary-container": "#d2b574",
+              "on-primary-fixed": "#251a00",
+              "tertiary-fixed": "#c4e7ff",
+              "on-secondary-fixed": "#251a00",
+              "surface-variant": "#3a3429",
+              "on-tertiary-fixed-variant": "#004c69",
+              "on-surface": "#ece1d1",
+              "surface-container": "#2a2418",
+              "outline-variant": "#4f4633",
+              "on-tertiary-fixed": "#001e2c",
+              "primary-fixed-dim": "#f6bf20",
+              "outline": "#9b8f79",
+              "primary-fixed": "#ffdf99",
+              "primary-container": "#483f23",
+              "error": "#ffb4ab",
+              "on-surface-variant": "#d3c5ac",
+              "inverse-primary": "#775a00",
+              "surface-container-highest": "#483f23",
+              "secondary": "#e1c380",
+              "secondary-fixed-dim": "#e1c380",
+              "surface": "#221d10",
+              "on-primary-container": "#ffd471",
+              "on-secondary-fixed-variant": "#58440d",
+              "surface-bright": "#3e382d",
+              "tertiary-container": "#004c69",
+              "inverse-surface": "#ece1d1",
+              "primary": "#ecb613",
+              "on-secondary": "#3f2e00",
+              "on-primary": "#221d10",
+              "on-background": "#ece1d1",
+              "tertiary": "#b0e0ff",
+              "surface-container-high": "#352e20",
+              "on-tertiary-container": "#c4e7ff",
+              "surface-dim": "#17130a",
+              "on-tertiary": "#00344a",
+              "secondary-fixed": "#ffdf9a",
+              "secondary-container": "#5b460f",
+              "tertiary-fixed-dim": "#7cd0ff",
+              "surface-tint": "#ecb613",
+              "surface-container-lowest": "#120e06",
+              "inverse-on-surface": "#353025",
+              "on-error": "#690005",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .editorial-shadow {
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.8);
+        }
+        .brand-glow {
+            text-shadow: 0 0 60px rgba(236, 182, 19, 0.2);
+        }
+        .text-huge {
+            font-size: clamp(8rem, 25vw, 24rem);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface min-h-screen flex flex-col selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 md:px-12 py-8 bg-transparent z-50">
+<div class="text-xl font-bold tracking-tighter text-primary">INFA</div>
+<div class="hidden lg:flex gap-12 items-center">
+<a class="text-on-surface/40 uppercase tracking-[0.2em] text-[10px] font-bold hover:text-primary transition-colors duration-300" href="#">Models</a>
+<a class="text-on-surface/40 uppercase tracking-[0.2em] text-[10px] font-bold hover:text-primary transition-colors duration-300" href="#">Agencies</a>
+<a class="text-on-surface/40 uppercase tracking-[0.2em] text-[10px] font-bold hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-on-surface/40 uppercase tracking-[0.2em] text-[10px] font-bold hover:text-primary transition-colors duration-300" href="#">Archive</a>
+</div>
+<div class="flex items-center gap-8">
+<button class="text-on-surface/40 uppercase tracking-[0.2em] text-[10px] font-bold hover:text-primary transition-colors duration-300">Sign In</button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold text-[10px] uppercase tracking-[0.2em] transition-transform hover:scale-105 active:scale-95 shadow-xl">Join the Archive</button>
+</div>
+</nav>
+<main class="flex-grow flex items-center relative">
+<div class="w-full h-full absolute top-0 left-0 pointer-events-none opacity-20">
+<div class="absolute -top-[20%] -left-[10%] w-[60%] h-[120%] rounded-full bg-primary/20 blur-[150px]"></div>
+</div>
+<div class="w-full grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+<!-- Left Column: High-Impact Brand Identity -->
+<div class="relative flex items-center justify-center bg-surface-container/30 border-r border-primary/5 px-12 pt-32 lg:pt-0">
+<div class="relative flex flex-col items-center">
+<span class="text-[10px] uppercase tracking-[0.8em] text-primary/60 mb-8 lg:mb-12 font-bold">The Global Archive</span>
+<h2 class="text-huge font-extrabold tracking-tighter text-primary brand-glow leading-none select-none">
+                    INFA
+                </h2>
+<div class="w-32 h-[1px] bg-primary/30 mt-12 lg:mt-16"></div>
+</div>
+<!-- Floating Decorative Element -->
+<div class="absolute bottom-12 left-12 hidden lg:block">
+<div class="flex items-center gap-4 opacity-30">
+<div class="w-12 h-[1px] bg-on-surface"></div>
+<span class="text-[9px] uppercase tracking-widest font-light">Est. MMXXIV</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Hero Messaging & Conversion -->
+<div class="flex flex-col justify-center px-12 lg:px-24 py-24 lg:py-0 space-y-12">
+<div class="max-w-xl space-y-8">
+<div class="space-y-4">
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter leading-[0.9] text-on-surface">
+                        Elevate Your <br/>
+<span class="text-primary italic">Modeling Career</span>
+</h1>
+<p class="text-on-surface-variant text-lg lg:text-xl font-light leading-relaxed max-w-lg pt-4">
+                        Access the most exclusive network of global talent scouts, verified agencies, and curated casting opportunities designed for the elite professional.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 pt-8">
+<button class="bg-primary text-on-primary px-12 py-5 rounded-lg font-bold text-xs uppercase tracking-[0.25em] shadow-2xl transition-all hover:brightness-110 active:scale-95">
+                        Get Started
+                    </button>
+<button class="border border-primary/20 text-primary px-12 py-5 rounded-lg font-bold text-xs uppercase tracking-[0.25em] bg-primary/5 hover:bg-primary/10 transition-all">
+                        Member Login
+                    </button>
+</div>
+</div>
+<!-- Minimal Editorial Footer Accent -->
+<div class="max-w-xl pt-16 border-t border-primary/10">
+<p class="text-[10px] uppercase tracking-[0.3em] text-on-surface/30 font-bold leading-loose">
+                    Curated opportunities for high-fashion editorial, commercial representation, and professional portfolio management.
+                </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="w-full border-t border-primary/5 bg-surface-container-lowest/50 backdrop-blur-sm">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-8 w-full gap-6">
+<div class="text-on-surface/20 text-[9px] uppercase tracking-[0.4em] font-medium">
+            © 2024 Gilded Obsidian Archive
+        </div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="text-on-surface/20 text-[9px] uppercase tracking-[0.4em] font-medium hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface/20 text-[9px] uppercase tracking-[0.4em] font-medium hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-on-surface/20 text-[9px] uppercase tracking-[0.4em] font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

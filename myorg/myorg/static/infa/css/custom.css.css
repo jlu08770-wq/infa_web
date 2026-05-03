@@ -1,0 +1,52 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    letter-spacing: 0;
+}
+
+img {
+    background: rgba(41, 37, 36, 0.75);
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+input,
+select,
+textarea {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.25);
+}
+
+a,
+button {
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+a:hover,
+button:hover {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+    h1 {
+        overflow-wrap: anywhere;
+    }
+
+    .mobile-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

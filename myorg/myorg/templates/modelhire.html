@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Infa | Hire Requests (Compact View)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#b0e0ff",
+              "surface-variant": "#3a3429",
+              "on-primary-fixed": "#251a00",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "primary-container": "#483f23",
+              "surface-container-highest": "#483f23",
+              "tertiary-fixed-dim": "#7cd0ff",
+              "outline": "#9b8f79",
+              "surface-container-low": "#241f15",
+              "primary-fixed-dim": "#f6bf20",
+              "on-tertiary-fixed-variant": "#004c69",
+              "secondary-fixed": "#ffdf9a",
+              "primary": "#ecb613",
+              "on-tertiary-fixed": "#001e2c",
+              "on-primary-container": "#ffd471",
+              "error": "#ffb4ab",
+              "on-surface": "#ece1d1",
+              "background": "#221d10",
+              "secondary-fixed-dim": "#e1c380",
+              "secondary": "#e1c380",
+              "on-tertiary-container": "#c4e7ff",
+              "secondary-container": "#5b460f",
+              "surface-bright": "#3e382d",
+              "on-secondary-fixed-variant": "#58440d",
+              "on-secondary-fixed": "#251a00",
+              "surface-container-high": "#352e20",
+              "error-container": "#93000a",
+              "surface-tint": "#ecb613",
+              "on-secondary-container": "#d2b574",
+              "outline-variant": "#4f4633",
+              "on-tertiary": "#00344a",
+              "surface-dim": "#17130a",
+              "inverse-surface": "#ece1d1",
+              "tertiary-container": "#004c69",
+              "surface-container-lowest": "#120e06",
+              "surface": "#221d10",
+              "on-primary": "#221d10",
+              "primary-fixed": "#ffdf99",
+              "surface-container": "#2a2418",
+              "on-background": "#ece1d1",
+              "inverse-primary": "#775a00",
+              "tertiary-fixed": "#c4e7ff",
+              "on-secondary": "#3f2e00",
+              "on-surface-variant": "#d3c5ac",
+              "inverse-on-surface": "#353025",
+              "on-primary-fixed-variant": "#5a4300"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #120e06;
+        color: #ece1d1;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(236, 182, 19, 0.2);
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="overflow-hidden">
+<!-- SideNavBar: Based on COMPONENTS_83 with 'Bookings' removed -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-50 bg-[#221d10] dark:bg-stone-950 flex flex-col py-8 shadow-2xl">
+<div class="px-8 mb-8">
+<h1 class="text-xl font-black text-[#ecb613] tracking-tighter">Infa</h1>
+<p class="font-plus-jakarta uppercase tracking-wider text-[10px] font-bold text-[#ece1d1]/40">Editorial Archive</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 text-[#ece1d1]/40 hover:text-[#ece1d1] py-3 px-6 transition-all hover:bg-[#ecb613]/10 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-plus-jakarta uppercase tracking-wider text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-[#ece1d1]/40 hover:text-[#ece1d1] py-3 px-6 transition-all hover:bg-[#ecb613]/10 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-plus-jakarta uppercase tracking-wider text-[10px] font-bold">Discovery</span>
+</a>
+<a class="flex items-center gap-4 text-[#ecb613] bg-[#ecb613]/5 rounded-r-full py-3 px-6 border-l-4 border-[#ecb613]" href="#">
+<span class="material-symbols-outlined">sync_alt</span>
+<span class="font-plus-jakarta uppercase tracking-wider text-[10px] font-bold">Requests</span>
+</a>
+<a class="flex items-center gap-4 text-[#ece1d1]/40 hover:text-[#ece1d1] py-3 px-6 transition-all hover:bg-[#ecb613]/10 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-plus-jakarta uppercase tracking-wider text-[10px] font-bold">Profile</span>
+</a>
+</nav>
+<div class="px-6 mb-8">
+<button class="w-full bg-primary text-on-primary py-3 px-4 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg hover:opacity-90 transition-all active:scale-95">
+            New Booking
+        </button>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant/20">
+<a class="flex items-center gap-4 text-[#ece1d1]/40 hover:text-[#ece1d1] py-3 px-6 transition-all hover:bg-[#ecb613]/10 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-plus-jakarta uppercase tracking-wider text-[10px] font-bold">Settings</span>
+</a>
+<a class="flex items-center gap-4 text-[#ece1d1]/40 hover:text-[#ece1d1] py-3 px-6 transition-all hover:bg-[#ecb613]/10 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-plus-jakarta uppercase tracking-wider text-[10px] font-bold">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-[calc(100%-16rem)] z-40 bg-[#221d10]/80 backdrop-blur-md dark:bg-stone-900/80 shadow-sm transition-colors duration-300">
+<div class="flex justify-between items-center h-16 px-8">
+<div class="flex-1 max-w-xl">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#ece1d1]/40">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/50 text-on-surface" placeholder="Search hire requests..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6 ml-6">
+<button class="material-symbols-outlined text-[#ece1d1]/60 hover:text-[#ece1d1] p-2 hover:bg-[#ecb613]/10 rounded-full transition-all">notifications</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User Profile Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyH07NmBYdgqk4co6o0Xiv4IM4ex78-Oja_CdUnRN8CZK5fCXzcG4Xb57KsFYSNBD4k3Ql5NXd3S70SBRapNdHG83yg_aWg59yVk-wHDKbY8M_lav90L-Hiqfr5-IgwAjidSdsr4WEE8ql-XJxkK7Vq3dCWI6ITdxcdxxOqUJ-HHn17XdMAYraZ2lelDH_5deFudHkHbOEHH-hkQTQY6GPv7L0DDYpVdlvyBq3K0NQLNNvU1zPB2WsagGrmWZfrb5o6o6zQqaJPA"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Compact View Content -->
+<section class="mt-16 p-8 overflow-y-auto h-[calc(100vh-4rem)] custom-scrollbar">
+<!-- Minimal Page Header -->
+<div class="mb-6 flex justify-between items-end border-b border-outline-variant/20 pb-4">
+<div>
+<h2 class="text-2xl font-bold tracking-tight text-on-surface">Requests Inventory</h2>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-semibold mt-1">Compact View</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container hover:bg-surface-container-high p-2 rounded-lg transition-colors border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high p-2 rounded-lg transition-colors border border-outline-variant/30">
+<span class="material-symbols-outlined text-sm">view_list</span>
+</button>
+</div>
+</div>
+<!-- Dense Tabular Layout -->
+<div class="w-full bg-surface-container-lowest rounded-xl border border-outline-variant/20 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low/50">
+<tr class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest border-b border-outline-variant/20">
+<th class="px-6 py-4">Client &amp; Editorial</th>
+<th class="px-6 py-4">Client</th>
+<th class="px-6 py-4">Location</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 text-sm">
+<!-- Request Item 1 -->
+<tr class="group hover:bg-primary/5 transition-colors">
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<img alt="Vogue India" class="w-10 h-10 rounded bg-stone-800 object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKoQzna61TqJLkWNgTIjda0lMgQqI5VizZ-f2r8BaruAYJ8Hf9ycQDAbm6jcdmSOujn1fHTajcPVUIgKn_Nqa9--CnNT7T80iCDca7GHWw9xe89E5FNk64dSIWKaasY9ugpxAELrllDiqtGuBvcttfM2zIEntEdHs_yIqxbZO98PHqAV-qo1d7Lyhpe9e5hQcLbXNL-iMxgI-veXbkebna-rPRp-pCM5inSSppI56FoPQBZX-K2xEYxdfL6KLFvzu4SAb7b0SlFw"/>
+<div>
+<div class="font-bold text-on-surface">Vogue India</div>
+<div class="text-[11px] text-on-surface-variant">Ethereal Monsoon Editorial</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Aug 12 - 15, 2024</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Mumbai, MH</td>
+<td class="px-6 py-3 text-right">
+<button class="text-primary hover:bg-primary hover:text-on-primary px-4 py-1.5 rounded-full border border-primary/20 text-[10px] font-bold transition-all uppercase tracking-widest">Details</button>
+</td>
+</tr>
+<!-- Request Item 2 -->
+<tr class="group hover:bg-primary/5 transition-colors">
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<img alt="Zara" class="w-10 h-10 rounded bg-stone-800 object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGusbOhfr2mKK3RoR_AL_tNKkwv_w2THSlYHv3bXFs8r63x1_NmgWFw1EwfrCs3TDVCwUFZADrw_GK2Nv-hplO4dc00dRbS7A7ztSYr1bcX0eifdb7yVeZcOYLoIttrqyWQ5eJ48OyvXwN9H9me3SW84aKRSE1r2kciiQDdZS0gjBT26aCDNDV_4GpE269xee7KtgVJusCiLsF1CltbuVlkOk_dcGrrZhH1c5wOcB21AFK1ScaaDiTWwwipATrJ53kl8gGQpr3zA"/>
+<div>
+<div class="font-bold text-on-surface">Zara</div>
+<div class="text-[11px] text-on-surface-variant">Autumn Collection 2024</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Sept 05 - 10, 2024</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Barcelona, ES</td>
+<td class="px-6 py-3 text-right">
+<button class="text-primary hover:bg-primary hover:text-on-primary px-4 py-1.5 rounded-full border border-primary/20 text-[10px] font-bold transition-all uppercase tracking-widest">Details</button>
+</td>
+</tr>
+<!-- Request Item 3 -->
+<tr class="group hover:bg-primary/5 transition-colors">
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<img alt="H&amp;M" class="w-10 h-10 rounded bg-stone-800 object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtqMnOUZ4fpB7ijGI3O-nNZ-amtX5XruGSTLoC76aktKC9j693dHbFgOh4fA1CXAhRVssuhHU8sD2_q0z8N_wFUsl15THIdLqHlnTMwi7oIXxgXqzVyXSd3OIMMNE6kfXexQZxW4I3FGvfMjVHUF6BAfR_I0OxP378PywFFwu3nFT_yds6tgAQhAwOS4zdfB-JuT-rMfmO2S4mbmpUQ5uz90kyWT6gOzUs8zH3btQtoOWm379jxFQZIejWvE5M5C-g9LwdGRV6Iw"/>
+<div>
+<div class="font-bold text-on-surface">H&amp;M</div>
+<div class="text-[11px] text-on-surface-variant">Street Culture Lookbook</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Aug 28 - 30, 2024</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Stockholm, SE</td>
+<td class="px-6 py-3 text-right">
+<button class="text-primary hover:bg-primary hover:text-on-primary px-4 py-1.5 rounded-full border border-primary/20 text-[10px] font-bold transition-all uppercase tracking-widest">Details</button>
+</td>
+</tr>
+<!-- Request Item 4 -->
+<tr class="group hover:bg-primary/5 transition-colors">
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<img alt="Elle France" class="w-10 h-10 rounded bg-stone-800 object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAziH5zU-g9HLIPmvRbfuVN-30OrNvj7KOI4ru4Yt-5h_Cu3a16c59H-JbhM4w1ZZjLmozvZVxW2na7x4GkJuOraZUMMnNgrfEgMM-Jsx61BMx7uZnO84SRU763mbpx20TC61Si346dxCBcJ2-U1bRJI8hs0YfFKe5ZVXXWf55lcPuATcuKXtVUVqYVYHx06WeNeH1AvAnH2X4jIRlAbr78POFrZllKKBNG6zaBIninQR0jrj9_O8TrLkEBh4SsfALf47TmmpqclA"/>
+<div>
+<div class="font-bold text-on-surface">Elle France</div>
+<div class="text-[11px] text-on-surface-variant">Rive Gauche Summer</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Oct 02 - 05, 2024</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Paris, FR</td>
+<td class="px-6 py-3 text-right">
+<button class="text-primary hover:bg-primary hover:text-on-primary px-4 py-1.5 rounded-full border border-primary/20 text-[10px] font-bold transition-all uppercase tracking-widest">Details</button>
+</td>
+</tr>
+<!-- Request Item 5 -->
+<tr class="group hover:bg-primary/5 transition-colors">
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<img alt="Gucci" class="w-10 h-10 rounded bg-stone-800 object-cover border border-outline-variant/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeFCjVMI9xcCMCcqh3-QkYvTpTWwYk89w8dSwAAiy80UnieaZwFVoH9Umby6nd1CWYfEn6Jq6nKn4kbGunwl4CCYVA0N22N8ol6yE2OZuRhNeSaaCEjcXkIt28wWccygtmJ9PbzImU-v6T8PR0wF3cMRIz-_FV5s7hnZaT8wjT7d7vHR549PmNCg7ERr4-SUsrbzd9qH8liigwUP-45auQhziHHlPbS87X04VAq-WA5bwUwmVXMeL1uP0sc89f_a8NdpVHG5UY0A"/>
+<div>
+<div class="font-bold text-on-surface">Gucci</div>
+<div class="text-[11px] text-on-surface-variant">Holiday Surrealism</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Nov 15 - 20, 2024</td>
+<td class="px-6 py-3 text-on-surface-variant text-xs">Milan, IT</td>
+<td class="px-6 py-3 text-right">
+<button class="text-primary hover:bg-primary hover:text-on-primary px-4 py-1.5 rounded-full border border-primary/20 text-[10px] font-bold transition-all uppercase tracking-widest">Details</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Compact View Footer / Pagination -->
+</div>
+</section>
+</main>
+<!-- Floating Action Button (Compact) -->
+<div class="fixed bottom-6 right-6 z-50">
+<button class="w-12 h-12 bg-primary text-on-primary rounded-lg shadow-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 group">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</body></html>
