@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Infa - Organizer View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ecb613",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#221d10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #483f23;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-primary/10 px-4 py-4">
+<div class="flex items-center justify-between max-w-5xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">grid_view</span>
+<h1 class="text-xl font-bold tracking-tight">Infa</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-primary/20 rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<a href="modelhire.html" class="p-2 hover:bg-slate-200 dark:hover:bg-primary/20 rounded-full transition-colors">
+    <span class="material-symbols-outlined">notifications</span>
+</a>
+<a href="edit page.html" class="p-2 hover:bg-slate-200 dark:hover:bg-primary/20 rounded-full transition-colors">
+    <span class="material-symbols-outlined">person</span>
+</a></div>
+</div>
+</header>
+<!-- Filter Bar -->
+<nav class="sticky top-[73px] z-10 bg-background-light dark:bg-background-dark/95 border-b border-slate-200 dark:border-primary/5 py-3 overflow-x-auto custom-scrollbar">
+<div class="flex gap-3 px-4 max-w-5xl mx-auto w-full">
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-background-dark font-semibold text-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-lg">tune</span>
+                All Filters
+            </button>
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-200 dark:bg-primary/10 border border-transparent dark:border-primary/20 text-sm whitespace-nowrap hover:border-primary/50 transition-colors">
+                Gender <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-200 dark:bg-primary/10 border border-transparent dark:border-primary/20 text-sm whitespace-nowrap hover:border-primary/50 transition-colors">
+                Height <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-200 dark:bg-primary/10 border border-transparent dark:border-primary/20 text-sm whitespace-nowrap hover:border-primary/50 transition-colors">
+                Location <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<a href="opportunityhire.html" class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-200 dark:bg-primary/10 border border-transparent dark:border-primary/20 text-sm whitespace-nowrap hover:border-primary/50 transition-colors">
+    Opportunities 
+    <span class="material-symbols-outlined text-sm">work</span>
+</a>
+</button>
+</div>
+</nav>
+<!-- Main Content Grid -->
+<main class="flex-1 p-4 max-w-5xl mx-auto w-full">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<!-- Model Card 1 -->
+<div class="group relative flex flex-col bg-slate-100 dark:bg-primary/5 rounded-xl overflow-hidden border border-transparent hover:border-primary/40 transition-all duration-300 shadow-sm">
+    
+    <!-- IMAGE CLICKABLE -->
+    <a href="indivisualmodel.html" class="block">
+        <div class="aspect-[3/4] overflow-hidden relative">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkgBAH0nduvMcoAStDOaLdViADvgSdSutuCxtUPNN7xGJTVbBYxvjB5QRNZ3bbiKafo9ZUP_LkGVt80APrwEixrY-e3cP-CgiL-I1VglXR6GqOv62msqmW7GxNoFhnBxIa1WaL8kSMCLovDtfulSq5O407oGM_xkaiMEkg-uqNhc-WyfJDsAXn_kPKnqmRMSZR15pVO8LzNRzPfx6YAKnw87Pf5dDV6sdJw4lDcC4XgR3emVlDARcWQeIES2-NIkc1M-zLFPTXQw"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+
+            <div class="absolute top-2 right-2 bg-primary text-background-dark p-1 rounded-full">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+            </div>
+        </div>
+    </a>
+
+    <!-- TEXT -->
+    <div class="p-3">
+        <h3 class="font-bold text-sm md:text-base truncate">Alexandria Rivera</h3>
+        <div class="flex items-center gap-1 text-xs">
+            <span class="material-symbols-outlined text-xs">location_on</span>
+            <span>Ahmedabad, IN</span>
+        </div>
+    </div>
+
+</div>
+<!-- Model Card 2 -->
+<div class="group relative flex flex-col bg-slate-100 dark:bg-primary/5 rounded-xl overflow-hidden border border-transparent hover:border-primary/40 transition-all duration-300 shadow-sm">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img alt="Model Headshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial portrait of a male model with sharp features" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRWr9O0XOTxZzfxmS9bDjT0vvZECJYek9JjYLarovu1WZy7nJ5Bw6s01NJZ52D-jPUvLsqEkrdPIoHd3XewQHWA2Ia7Om3T6qq3RrxPZqGsr9ovmNIEm4PeN1L64Eq2JbMcv00vKig6NkFsRgVeVE9xsWZQjxs53vmlwbfId17mOQ4m4ubjgmpknfDrRuNG6K9-xNGSGFLjyrP8w8kyXqrgdAzI_mn4Xb0EMRWufdDe_3_lN_xnmim9AHS3FKgqTZbSaJWAwCd7Q"/>
+<div class="absolute top-2 right-2 bg-primary text-background-dark p-1 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px] font-bold">verified</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-bold text-sm md:text-base truncate">Jordan Smith</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>Ahmedabad, IN</span>
+</div>
+</div>
+</div>
+<!-- Model Card 3 -->
+<div class="group relative flex flex-col bg-slate-100 dark:bg-primary/5 rounded-xl overflow-hidden border border-transparent hover:border-primary/40 transition-all duration-300 shadow-sm">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img alt="Model Headshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-fashion close up of a model with artistic makeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDymmemXa2mmVkLu_6Ol-rviGd-tIU8ehDXOQkaEYE74nFFNyONK9QT89jnfky_NO6Fj39nCgytNDAajM20CKDcrzB8IwrKAUY_VjaQBV68TDejb6v3DLBoa6e0Hax07sSxf6R77gUuqm0fCgz4Eop2JtQnFkfvr9MtiXZ64lj24d1FZ1kXH2AdxSK6D_q_lkyc079nv4XRKFMfnIVAoBX5FnxINsOOvIF0k3xYO4vkmon5DpAdZzMq-wIOh5V0B10R8oEU_RNgbQ"/>
+<div class="absolute top-2 right-2 bg-primary text-background-dark p-1 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px] font-bold">verified</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-bold text-sm md:text-base truncate">Sasha Chen</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>Ahmedabad, IN</span>
+</div>
+</div>
+</div>
+<!-- Model Card 4 -->
+<div class="group relative flex flex-col bg-slate-100 dark:bg-primary/5 rounded-xl overflow-hidden border border-transparent hover:border-primary/40 transition-all duration-300 shadow-sm">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img alt="Model Headshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Clean minimalist headshot of a smiling male model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiqinpjawrJhdhtDV1gQIHWUqYLCfK3OGlu5H_cg7-Gpp_z3RgmSr8ZDNhpjgO-_sd6ZYe3YaWUxqXGEYvonyxlL9xGXrP1USZ1njs_bje9u54nhBtnVWIIoKfw_1_SfhU8Gu70e43sOrE4aD5aL20CQGaEo-XRx742BE8pEkirpMjrSG519bRet7862SEULFLqN6bIpEjiZCuzjGRinw2bZvvA91qS9yh5gVQy0BUWO_0ms00B2-VvU-6Md4GGj4vKd4PGt-rdw"/>
+<div class="absolute top-2 right-2 bg-primary text-background-dark p-1 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px] font-bold">verified</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-bold text-sm md:text-base truncate">Taylor Brooks</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>Ahmedabad, IN</span>
+</div>
+</div>
+</div>
+<!-- Model Card 5 -->
+<div class="group relative flex flex-col bg-slate-100 dark:bg-primary/5 rounded-xl overflow-hidden border border-transparent hover:border-primary/40 transition-all duration-300 shadow-sm">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img alt="Model Headshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of a female model with natural aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_LeLhp4gCFfeOfBT823TpVUd2o8wZi0WCSN3khAiSlKJkqPQvmBAf0D8riXO6J8KQjv2Ha_leXMhTItJk6QuV9ZPEC7hH_ZX1trXPVAsGgyo3pq3TWxHT78mISuiFqBuFU2o9QBehg42v-6cUAhZZuVcJQRwUWZqSMR0njtuZppBOisODpzjxvpxsFOe2X5PBsrEzDglldyQp5anz9hUAcLrbQIeBHgT6F0d2Wc-laRT7RkwGNEDkH54UeiwLA7HOC41vtpzKEg"/>
+<div class="absolute top-2 right-2 bg-primary text-background-dark p-1 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px] font-bold">verified</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-bold text-sm md:text-base truncate">Morgan Lee</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>Ahmedabad, IN</span>
+</div>
+</div>
+</div>
+<!-- Model Card 6 -->
+<div class="group relative flex flex-col bg-slate-100 dark:bg-primary/5 rounded-xl overflow-hidden border border-transparent hover:border-primary/40 transition-all duration-300 shadow-sm">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img alt="Model Headshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Black and white portrait of a male model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI6FomA3HAi6NF93vaqENQNCKo61g1QHx-0uQfbH-UpYhbeTAJxhUj-MMPQgTmAq8ZF24jDI2xt8sMttS5hYXfXQ9crQOcyuG28SMwrhlatG2VKZj8rPat3Bu06IgXk9HEF2zADv_5sE5wnPQ3QrlUD4iT_i9SG-lAp9P0Io3nCJqImR80CkS3pE_FVBjDWkKXBE-F8TT9TXNsQiOpmbg4o-G4TUjrmO3kS4S-5MsDLoFn0pO1fcOLA9yT1kHnQ9trPHu2NgOouw"/>
+<div class="absolute top-2 right-2 bg-primary text-background-dark p-1 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px] font-bold">verified</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-bold text-sm md:text-base truncate">Casey Kim</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>Ahmedabad, IN</span>
+</div>
+</div>
+</div>
+<!-- Model Card 7 -->
+<div class="group relative flex flex-col bg-slate-100 dark:bg-primary/5 rounded-xl overflow-hidden border border-transparent hover:border-primary/40 transition-all duration-300 shadow-sm">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img alt="Model Headshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bright high-energy commercial headshot of a woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsQFQcEvjJe7ZOAFDSwSWPn5jzkUu0R92Srfk3rkHxsjZAY7XNEmhKWtatXT29yxZVqIwal0yc0T09bWcRMgtF2PZx7miTDKzh9hWyyhiiSYOMHloF4aLklgqxEfWJFfttcS_-FQGmizeqKunJzw-yXzpTzO8EmnvbE6G9GvGaccP2GsfbPvR-K7tgOxtVf_PfMXj8qdEbIa_U0UhQgHDTFpAeBm3q5fATWpc0N-Mpn66oRTo-2UOVRX81Nt2wxuhZFbYdRLnAAQ"/>
+<div class="absolute top-2 right-2 bg-primary text-background-dark p-1 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px] font-bold">verified</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-bold text-sm md:text-base truncate">Elena Garcia</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>Ahmedabad, IN</span>
+</div>
+</div>
+</div>
+<!-- Model Card 8 -->
+<div class="group relative flex flex-col bg-slate-100 dark:bg-primary/5 rounded-xl overflow-hidden border border-transparent hover:border-primary/40 transition-all duration-300 shadow-sm">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img alt="Model Headshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Rugged fashion editorial portrait of a man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5_Ts0iMb68elQrHa-wknrvuuNYWc_QAJsYDlyDG4G3-5a1MPIZvnPCaZXvXmeMOvOAVD6NM2hA2cSLJok7DgbW-qmaD0_XxD7QIcBZAOEmTEdq44Li_JG9iLYH6TN4kAnONiEtgMcTpLm5vJE1cqa4Vrc1mUJuwkWeDePA1Py17hWso1hVUGpnOEDnuxx6CF-PFxnOSwIBRtQt5nX4mwTZfuAw11yCNLhl6at0Z09Ayt40uktY8woF6rw0kJqJdoCM2CNAD7Syw"/>
+<div class="absolute top-2 right-2 bg-primary text-background-dark p-1 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[16px] font-bold">verified</span>
+</div>
+</div>
+<div class="p-3">
+<h3 class="font-bold text-sm md:text-base truncate">Liam O'Neill</h3>
+<div class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>Ahmedabad, IN</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-6 z-30">
+<button class="flex items-center justify-center w-14 h-14 bg-primary text-background-dark rounded-xl shadow-2xl hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<footer class="fixed bottom-0 left-0 right-0 z-40 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-primary/10 px-4 py-2 pb-6">
+<div class="flex justify-between items-center max-w-5xl mx-auto gap-1">
+<a class="flex flex-1 flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">explore</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Discover</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400 dark:text-primary/40 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Messages</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400 dark:text-primary/40 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Bookings</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400 dark:text-primary/40 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">assignment_ind</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Castings</p>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 text-slate-400 dark:text-primary/40 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Profile</p>
+</a>
+</div>
+</footer>
+<div class="h-20 w-full"></div> <!-- Spacer for fixed footer -->
+</body></html>

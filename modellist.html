@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "outline-variant": "#4f4633",
+            "on-secondary-fixed": "#251a00",
+            "error-container": "#93000a",
+            "on-background": "#ece1d1",
+            "on-secondary-container": "#d2b574",
+            "on-surface-variant": "#d3c5ac",
+            "surface-variant": "#3a3429",
+            "inverse-primary": "#775a00",
+            "error": "#ffb4ab",
+            "secondary-container": "#5b460f",
+            "background": "#221d10",
+            "surface-container-highest": "#483f23",
+            "surface-container-low": "#241f15",
+            "on-tertiary": "#00344a",
+            "surface-dim": "#17130a",
+            "on-primary-fixed-variant": "#5a4300",
+            "surface-container-high": "#352e20",
+            "secondary-fixed": "#ffdf9a",
+            "surface-tint": "#ecb613",
+            "primary": "#ecb613",
+            "surface-container": "#2a2418",
+            "outline": "#9b8f79",
+            "on-tertiary-fixed-variant": "#004c69",
+            "tertiary": "#b0e0ff",
+            "on-tertiary-container": "#c4e7ff",
+            "on-primary-fixed": "#251a00",
+            "on-primary": "#221d10",
+            "surface-bright": "#3e382d",
+            "inverse-on-surface": "#353025",
+            "surface": "#221d10",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed": "#001e2c",
+            "on-secondary": "#3f2e00",
+            "primary-fixed-dim": "#f6bf20",
+            "on-surface": "#ece1d1",
+            "surface-container-lowest": "#120e06",
+            "secondary-fixed-dim": "#e1c380",
+            "primary-fixed": "#ffdf99",
+            "on-error": "#690005",
+            "inverse-surface": "#ece1d1",
+            "tertiary-fixed-dim": "#7cd0ff",
+            "on-primary-container": "#ffd471",
+            "tertiary-fixed": "#c4e7ff",
+            "tertiary-container": "#004c69",
+            "secondary": "#e1c380",
+            "on-secondary-fixed-variant": "#58440d",
+            "primary-container": "#483f23"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #221d10; color: #ece1d1; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .tonal-shift-surface-to-container { background-color: #2a2418; }
+    .glass-header { background: rgba(34, 29, 16, 0.8); backdrop-filter: blur(12px); }
+  </style>
+</head>
+<body class="bg-background text-on-surface overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 border-r border-primary/10 bg-surface z-50 flex flex-col py-6 space-y-2">
+<div class="px-6 mb-8">
+<h1 class="text-primary font-black italic text-2xl tracking-tighter">Infa</h1>
+<p class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px] text-on-surface/60 mt-1">Editorial Archive</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-[#ece1d1]/60 px-4 py-3 mx-2 hover:bg-[#ecb613]/5 hover:text-[#ecb613] transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px]">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-[#ecb613]/10 text-[#ecb613] rounded-full px-4 py-3 mx-2" href="#">
+<span class="material-symbols-outlined" data-icon="work_outline">work_outline</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px]">Hire Requests</span>
+</a>
+<a class="flex items-center gap-3 text-[#ece1d1]/60 px-4 py-3 mx-2 hover:bg-[#ecb613]/5 hover:text-[#ecb613] transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px]">Talent Pool</span>
+</a>
+<a class="flex items-center gap-3 text-[#ece1d1]/60 px-4 py-3 mx-2 hover:bg-[#ecb613]/5 hover:text-[#ecb613] transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px]">Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-[#ece1d1]/60 px-4 py-3 mx-2 hover:bg-[#ecb613]/5 hover:text-[#ecb613] transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px]">Archive</span>
+</a>
+</nav>
+<div class="px-4 mb-6">
+<button class="w-full bg-primary text-on-primary font-bold py-3 rounded-full text-xs uppercase tracking-widest shadow-lg hover:opacity-90 transition-opacity">
+        New Request
+      </button>
+</div>
+<div class="mt-auto border-t border-primary/5 pt-4">
+<a class="flex items-center gap-3 text-[#ece1d1]/60 px-4 py-3 mx-2 hover:bg-[#ecb613]/5 hover:text-[#ecb613] transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px]">Support</span>
+</a>
+<a class="flex items-center gap-3 text-[#ece1d1]/60 px-4 py-3 mx-2 hover:bg-[#ecb613]/5 hover:text-[#ecb613] transition-all rounded-full" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-['Plus_Jakarta_Sans'] uppercase tracking-wider text-[10px]">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- Top Header -->
+<header class="sticky top-0 z-40 glass-header border-b border-primary/5 px-8 h-20 flex items-center justify-between">
+<div>
+<h2 class="text-xl font-bold tracking-tight text-on-surface">Hire Requests</h2>
+<p class="text-xs text-on-surface/40 font-medium">Managing active and historical brand inquiries</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center bg-surface-container rounded-full px-4 py-2 border border-primary/10">
+<span class="material-symbols-outlined text-primary/60 text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder:text-on-surface/30 w-48" placeholder="Search requests..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-on-surface/60 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a professional male fashion agent in a dark studio setting with warm rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyJtLWryRam10IbveNa6QNJxUwVhJzLZrd8UVLeLweabdUeB3b8kP1NgFozDDRTsboqwurqmDN4jK6Y0E6DU17pxhAHpR8YCu1gKJEhYNwxfdtKgpFbuwWtoeE397Flfqt1az7P25HbxfJHszTmqCpfybSTu3-PWVMJV21dRIdV4GgbPJ9rI3gGxQ7uuV0Pu6mehCu0AI_1HQwn6jMnQdI2RM9y4YjwVh0sj_l4IHK7so_MZnXHblWB_61vhaRmIM9EIuQ5voixA"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-6xl mx-auto">
+<!-- Filter Bar -->
+<div class="flex gap-3 mb-10 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-5 py-2 bg-primary text-on-primary rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">All Requests</button>
+<button class="px-5 py-2 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap border border-primary/20">Active Only</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface/60 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap hover:bg-surface-container-high transition-colors">High Priority</button>
+<button class="px-5 py-2 bg-surface-container text-on-surface/60 rounded-full text-[10px] font-bold uppercase tracking-wider whitespace-nowrap hover:bg-surface-container-high transition-colors">Pending Response</button>
+<div class="ml-auto flex items-center gap-2 text-[10px] text-on-surface/40 uppercase tracking-widest font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="sort">sort</span>
+          Sort by: Latest
+        </div>
+</div>
+<!-- Requests List -->
+<div class="space-y-4">
+<!-- Request Item 1 -->
+<div class="group bg-surface-container/40 p-5 rounded-xl flex items-center gap-6 border border-transparent hover:border-primary/10 hover:bg-primary/5 transition-all duration-300">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 grayscale group-hover:grayscale-0 transition-all">
+<img class="w-full h-full object-cover" data-alt="minimalist fashion brand logo on a neutral textured background with dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDczUPBAgD_GrW4uFQV3fDLKm-AR8t3BRes6QltarxipxEmKOwVm8yERPRrdQjToj0xsWJ1GhkEy80ubIOQFDUKRPYRn8Ux3D3pw_XFUKMx4XDOUO3xu4VvdqZTFT2A2yrfxbbUm-aavECFauwEBEKqxaTGM7wNE8OxyZs7XqCe_Bkok088X1l734hsMaN_4O3U9T_mJDH_QL0cAsxrWo9Gmll-EQkW_AFfxJ3389MZ1e6qdnrlf3fidwUgxOA8yoywxLmEzmz_w"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="font-bold text-base text-on-surface truncate">Vogue India</h3>
+<span class="bg-primary/20 text-primary px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-tighter">New</span>
+</div>
+<p class="text-sm font-medium text-on-surface/80">Autumn Editorial: "Midnight in Rajasthan"</p>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center gap-1.5 text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                Jaipur
+              </div>
+<div class="flex items-center gap-1.5 text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+                Oct 12 - Oct 15
+              </div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2.5 rounded-full border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors">Message</button>
+<button class="px-6 py-2.5 rounded-full bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider shadow-sm hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all">View Details</button>
+</div>
+</div>
+<!-- Request Item 2 -->
+<div class="group bg-surface-container/40 p-5 rounded-xl flex items-center gap-6 border border-transparent hover:border-primary/10 hover:bg-primary/5 transition-all duration-300">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 grayscale group-hover:grayscale-0 transition-all">
+<img class="w-full h-full object-cover" data-alt="sleek modern retail brand identity displayed on a glass storefront in a city at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRG-AuUKpXStCbwp-0MNbFRmWC9-QqOqYAHpUEQwy8GU84VLXpSdzIW3nzN0sVk9fJd3jW4QL0alr-uApELGWncKKb02v6NfSWHRfzEtdl5iDogNFab49_Hk09Gw4vUWn5oQ_nezftb8X_debuGBOvgm6hFdJTvXJ1vKLNRvOU1R0MVfOB4qLT8GbSfsRZgmmZOHwao7MWIYjQKkRCM_t67VARNYONw5MHmM4VrrKzgrW2CDtbn0Fg6VCVMk0V1XiQ76RPw5IFsA"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="font-bold text-base text-on-surface truncate">Zara</h3>
+<span class="bg-on-surface-variant/10 text-on-surface/60 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-tighter">Pending</span>
+</div>
+<p class="text-sm font-medium text-on-surface/80">Winter Campaign Lookbook</p>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center gap-1.5 text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                Mumbai
+              </div>
+<div class="flex items-center gap-1.5 text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+                Nov 02 - Nov 08
+              </div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2.5 rounded-full border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors">Message</button>
+<button class="px-6 py-2.5 rounded-full bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider shadow-sm hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all">View Details</button>
+</div>
+</div>
+<!-- Request Item 3 -->
+<div class="group bg-surface-container/40 p-5 rounded-xl flex items-center gap-6 border border-transparent hover:border-primary/10 hover:bg-primary/5 transition-all duration-300">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 grayscale group-hover:grayscale-0 transition-all">
+<img class="w-full h-full object-cover" data-alt="close-up of handcrafted textile patterns with gold threading and organic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmDMwflUkNdHrkW4_RM_A6KRtMaTnjh2_2_103rhhaBVzJeoF3BGyJonBk4tCHiX0A1T44bS-xYT0y4s1i4cMDgr-JzQCwo0QBG2ZLCHVFdl5kNBKpCsQ1iA9mxbPvGpc_8PkUVdOlZlKEgvvRH6JwEUJbT321VzthjNON_A6zDwJj_flpX4Nx_OG6Qve0RMnNn7iagPNvrgRUr44sp0SUZRV-GtnsM2fmk-gjogUp64xImkew_9uHwhzDb2NqoV5j5CG9drwY_w"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="font-bold text-base text-on-surface truncate">Artisanal Collective</h3>
+<span class="bg-green-500/10 text-green-400 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-tighter">Accepted</span>
+</div>
+<p class="text-sm font-medium text-on-surface/80">Heritage Craft Documentary Series</p>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center gap-1.5 text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                New Delhi
+              </div>
+<div class="flex items-center gap-1.5 text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+                Dec 15 - Dec 20
+              </div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2.5 rounded-full border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors">Message</button>
+<button class="px-6 py-2.5 rounded-full bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider shadow-sm hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all">View Details</button>
+</div>
+</div>
+<!-- Request Item 4 -->
+<div class="group bg-surface-container/40 p-5 rounded-xl flex items-center gap-6 border border-transparent hover:border-primary/10 hover:bg-primary/5 transition-all duration-300">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 grayscale group-hover:grayscale-0 transition-all">
+<img class="w-full h-full object-cover" data-alt="vibrant fashion campaign image with bold colors and clean minimalist studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyabdLMKwjqE71rZ2oWlMdkVp91TDbIBy_3XXhpkpIOVgT3YivC0IPNLS-xY_ywufbiodsUo-TXmX0fpAmzCeXvDgicHYvdXO0RSEIIO6hOl5LvjkMAnNu8OX_TwzsadJzO5PD6k4jFSlJS6D4EmLqY01EEHrJE3-KE_iNpgPdwv70_FfabCZqPpPBIX99FQhyQ5WhZh7Px9r00oF7JTM0GGN4hplIuzlegZEyQjIMqZDGj13sSHLg-6f7Kzx8cgJiGvHp-Ukyvg"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="font-bold text-base text-on-surface truncate">H&amp;M India</h3>
+<span class="bg-primary/20 text-primary px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-tighter">New</span>
+</div>
+<p class="text-sm font-medium text-on-surface/80">Urban Escape Collection: Studio Shoot</p>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center gap-1.5 text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                Bengaluru
+              </div>
+<div class="flex items-center gap-1.5 text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_month">calendar_month</span>
+                Oct 28 - Oct 30
+              </div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2.5 rounded-full border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider hover:bg-primary/10 transition-colors">Message</button>
+<button class="px-6 py-2.5 rounded-full bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider shadow-sm hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all">View Details</button>
+</div>
+</div>
+</div>
+<!-- Quick Stats / Bento Element -->
+</div>
+</main>
+<!-- FAB Overlay for focused action - suppressed as per mandate for transactional screens, but we add a 'Floating Help' if needed elsewhere. Currently suppressed. -->
+</body></html>
